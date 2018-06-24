@@ -1,13 +1,28 @@
 package com.urielcuriel.amazonviewer.model;
 
 public class Film {
-	protected int id;
-	protected String title;
-	protected String genre;
-	protected String creator;
-	protected int duration;
-	protected short year;
-	protected boolean viewed;
+	private int id;
+	private String title;
+	private String genre;
+	private String creator;
+	private int duration;
+	private short year;
+	private boolean viewed;
+	
+	/**
+	 * @param title
+	 * @param genre
+	 * @param creator
+	 * @param duration
+	 */
+	public Film(String title, String genre, String creator, int duration) {
+		super();
+		this.title = title;
+		this.genre = genre;
+		this.creator = creator;
+		this.duration = duration;
+	}
+	
 	public void showData() {
 		System.out.println("Title: "+this.title);
 		System.out.println("Genre: "+this.genre);
@@ -55,4 +70,5 @@ public class Film {
 	public void setViewed(boolean viewed) {
 		this.viewed = viewed;
 	}
+	
 }

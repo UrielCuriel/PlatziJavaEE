@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Date;
 
+import com.urielcuriel.amazonviewer.model.Magazine;
 import com.urielcuriel.amazonviewer.model.Movie;
 
 
@@ -12,8 +13,11 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException{
 		// TODO Auto-generated method stub
-		Movie movie = new Movie("Coco", "Animation",(short) 2017);
-		movie.showData();
+		Movie movie = new Movie("Coco", "Animation", "Lee Unkrich", 180, (short)2017);
+		System.out.println(movie);
+		System.out.println();
+		Magazine magazine = new Magazine("Muy Interresante", new Date(), "Morma");
+		System.out.println(magazine.toString());
 		//showMenu();
 		
 		

@@ -1,32 +1,60 @@
 package com.urielcuriel.amazonviewer.model;
 
-public class Movie {
+import java.util.Date;
+
+public class Movie extends Film implements IVisualizable{
 	private int id;
-	private String title;
-	private String genre;
-	private String creator;
-	private int duration;
-	private short year;
-	private boolean viewed;
 	private int timeViewed;
 	
-	public Movie(String title, String genre, String creator, int duration, short year) {
-		super();
-		this.title = title;
-		this.genre = genre;
-		this.creator = creator;
-		this.duration = duration;
-		this.year = year;
+	/**
+	 * @param title
+	 * @param genre
+	 * @param creator
+	 * @param duration
+	 */
+	public Movie(String title, String genre, String creator, int duration,short year) {
+		super(title, genre, creator, duration);
+		setYear(year);
 	}
-	public Movie(String title, String genre, short year) {
-		super();
-		this.title = title;
-		this.genre = genre;
-		this.year = year;
+	
+	public int getId() {
+		return this.id;
 	}
-	public void showData() {
-		System.out.println("Title: "+this.title);
-		System.out.println("Genre: "+this.genre);
-		System.out.println("Year: "+this.year);
+	
+	public int getTimeViewed() {
+		return timeViewed;
 	}
+	public void setTimeViewed(int timeViewed) {
+		this.timeViewed = timeViewed;
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return  "\n :: MOVIE ::" + 
+				"\n Title: " + getTitle() +
+				"\n Genero: " + getGenre() + 
+				"\n Year: " + getYear() + 
+				"\n Creator: " + getCreator() +
+				"\n Duration: " + getDuration();
+	}
+
+	@Override
+	public Date startToSee(Date dateI) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public void stopToSee(Date dateI, Date dateF) {
+		// TODO Auto-generated method stub
+		if(dateF.getSeconds() - dateI.getSeconds()>0) {
+			setTimeViewed(dateF.getSeconds() - dateI.getSeconds());
+		}else {
+			setTimeViewed(0);
+		}
+		
+	}
+	
+	
 }

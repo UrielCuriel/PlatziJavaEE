@@ -2,22 +2,33 @@ package com.urielcuriel.amazonviewer.model;
 
 import java.util.Date;
 
-public class Magazine {
+public class Magazine extends Publishing{
+	
 	private int id;
-	private String title;
-	private Date edititionDate;
-	private String editorial;
-	private String[] authors;
+
 	/**
 	 * @param title
 	 * @param edititionDate
 	 * @param editorial
 	 */
 	public Magazine(String title, Date edititionDate, String editorial) {
-		super();
-		this.title = title;
-		this.edititionDate = edititionDate;
-		this.editorial = editorial;
+		super(title, edititionDate, editorial);
+		// TODO Auto-generated constructor stub
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return " :: MAGAZINE :: \n"+super.toString();
+	}
+
+	
+	
 	
 }
